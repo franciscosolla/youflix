@@ -2,6 +2,7 @@ import React from 'react'
 import './Menu.css'
 import Logo from '../../assets/logo.png'
 import Button from '../Button'
+import { Link } from 'react-router-dom'
 
 export default Menu
 
@@ -9,11 +10,11 @@ export function Menu() {
     return (
         <nav className='Menu' >
             
-            <a href='/' >
+            <Link to='/' >
                 <img className='Logo' src={Logo} alt='Youflix logo' />
-            </a>
+            </Link>
 
-            <Button className='ButtonLink' href='/' >
+            <Button as={Link} className='ButtonLink' to='/add/video' >
                 Novo Vídeo
             </Button>
         </nav>

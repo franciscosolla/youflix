@@ -1,26 +1,18 @@
 import React from 'react';
-import Menu from './components/Menu';
-import dadosIniciais from './data/dados_iniciais.json'
-import BannerMain from './components/BannerMain';
-import Carousel from './components/Carousel'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import AddVideo from './pages/AddVideo';
+import AddCategory from './pages/AddCategory';
 
 function App() {
   return (
-    <div style={{ backgroundColor: '#141414' }} >
-      <Menu />
-
-      <BannerMain
-        videoTitle={dadosIniciais.categorias[0].videos[0].titulo}
-        url={dadosIniciais.categorias[0].videos[0].url}
-        videoDescription='O que é Front-end? Trabalhando na áre'
-      />
-
-      <Carousel
-        ignoreFirstVideo
-        category={dadosIniciais.categorias[0]}
-      />
-
-    </div>
+    <BrowserRouter >
+      <Switch >
+        <Route exact path='/' component={Home} />
+        <Route exact path='/add/video' component={AddVideo} />
+        <Route exact oath='/add/category' component={AddCategory} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

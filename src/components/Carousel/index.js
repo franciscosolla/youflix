@@ -45,4 +45,5 @@ function VideoCardGroup({
   );
 }
 
-export default VideoCardGroup;
+const Carousel = VideoCardGroup
+export default Carousel;
